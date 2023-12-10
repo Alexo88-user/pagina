@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/index.css">
+
+
+  <!--FONT AWESOME-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!--GOOGLE FONTS-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet"> 
+
+
+
+
+
+
+</head>
+<body>
+
+  <nav>
+    <a href="#" data-target="#inicio">home</a>
+    <a href="#" data-target="#productos">productos</a>
+    <a href="#" data-target="#contacto">contacto</a>
+    <a href="#" id="opcion4">Opción 4</a>
+  </nav>
+
+  <div class="container">
+    <!-- Contenido de tu página aquí -->
+    <div data-content id="inicio" class="active">
+      <h1>Hi. I'm Jesús</h1>
+
+      <div class="card-container">
+
+        <a href="#" data-target="prueba">
+          <div class="article-card">
+            <div class="content">
+              <p class="title">prueba 1</p>
+            </div>
+            <img src="img/pruebaProducto.jpg" alt="article-cover" />
+          </div>
+        </a>
+
+
+
+        <a href="#" data-target="productos2">
+          <div class="article-card" id="indent-1">
+            <div class="content">
+              <p class="title">prueba 2</p>
+            </div>
+            <img src="img/pruebaProducto.jpg" alt="article-cover" />
+          </div>
+        </a>
+
+
+      </div>
+      <div class="card-container">
+
+        <a href="#" data-target="productos3">
+          <div class="article-card" id="indent-1">
+            <div class="content">
+              <p class="title">prueba 3</p>
+            </div>
+            <img src="img/pruebaProducto.jpg" alt="article-cover" />
+          </div>
+        </a>
+
+        <a href="#" data-target="productos4">
+          <div class="article-card">
+            <div class="content">
+              <p class="title">prueba 4</p>
+            </div>
+            <img src="img/pruebaProducto.jpg" alt="article-cover" />
+          </div>
+        </a>
+
+      </div>
+
+
+
+
+      <div class="skill-container">
+        <h1>skill</h1>
+
+        <div class="card-container" id="containerId" >
+
+          <a href="#">
+            <div class="article-card" id="ski1">
+              <div class="content">
+                <p class="title">Programmer</p>
+              </div>
+              <img src="img/pruebaSkil.png" alt="article-cover" />
+            </div>
+          </a>
+  
+  
+  
+          <a href="#">
+            <div class="article-card" id="ski2">
+              <div class="content">
+                <p class="title">artist</p>
+              </div>
+              <img src="img/pruebaSkil.png" alt="article-cover" />
+            </div>
+          </a>
+
+          <a href="#">
+            <div class="article-card" id="ski3">
+              <div class="content">
+                <p class="title">About me</p>
+              </div>
+              <img src="img/pruebaSkil.png" alt="article-cover" />
+            </div>
+          </a>
+  
+  
+        </div>
+      </div>
+
+
+
+
+    </div>
+
+		<div data-content id="productos" class="medio">
+			<h1>Productos</h1>
+		</div>
+
+    <div data-content id="prueba">
+      <h1>prueba producto 1</h1>
+      <h1>prueba producto 1</h1>
+      <h1>prueba producto 1</h1>
+      <h1>prueba producto 1</h1>
+      <h1>prueba producto 1</h1>
+      <h1>prueba producto 1</h1>
+    </div>
+    <div  data-content id="productos2">
+      <h1>prueba producto 2</h1>
+    </div>
+    <div  data-content id="productos3">
+      <h1>prueba producto 3</h1>
+    </div>
+    <div  data-content id="productos4">
+      <h1>prueba producto 4</h1>
+    </div>
+
+
+		<div data-content id="contacto">
+			<h1>Contacto</h1>
+		</div>
+  </div>
+
+  <footer>
+    
+  </footer>
+
+
+  <script>
+    
+    document.addEventListener('DOMContentLoaded', function () {
+      const opciones = document.querySelectorAll('nav a');
+
+      opciones.forEach(opcion => {
+        opcion.addEventListener('click', function () {
+          // Quitar la clase active de todas las opciones
+          opciones.forEach(opc => opc.classList.remove('active'));
+          
+          // Agregar la clase active solo a la opción actual
+          this.classList.add('active');
+        });
+      });
+    });
+
+
+    //script para que aparezca y desaparesca el contenido de la pantalla y actualize y aparezca el seleccionado
+    const targets = document.querySelectorAll('[data-target]')
+    const content = document.querySelectorAll('[data-content]')
+
+    targets.forEach(target => {
+      target.addEventListener('click', () => {
+        content.forEach(c => {
+          c.classList.remove('active')
+        })
+        const t = document.querySelector(target.dataset.target)
+        t.classList.add('active')
+      })
+    })
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const nav = document.querySelector('nav');
+      const container = document.querySelector('.container');
+      const navHeight = nav.offsetHeight;
+
+      // Función para cambiar el fondo del nav al hacer scroll
+      function cambiarFondoNav() {
+        const containerTop = container.getBoundingClientRect().top;
+
+        if (containerTop <= navHeight) {
+          // El nav está al mismo nivel que el container o por encima
+          nav.style.backgroundColor = '#f8f8f8'; // Cambia el color según tus preferencias
+        } else {
+          // El nav está por debajo del container
+          nav.style.backgroundColor = 'transparent'; // Sin fondo cuando está arriba
+        }
+      }
+
+      // Agrega un listener para el evento de scroll
+      window.addEventListener('scroll', cambiarFondoNav);
+
+      // Ejecuta la función al cargar la página para establecer el color inicial
+      cambiarFondoNav();
+    });
+
+
+
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: gray;
+}
+
+
+nav {
+    background-color: transparent;
+    border-radius: 30px;
+    padding: 20px;
+    position: fixed;
+    width: 18%; /* Puedes ajustar el ancho según tus preferencias */
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    text-align: center;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+nav a {
+    text-decoration: none;
+    color: black !important;
+    padding: 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+
+nav a.active {
+    background-color: #a8a4a4; /* Color de fondo para la opción activa */
+    border-radius: 30px;
+}
+nav a:hover {
+    background-color: #a8a4a4;
+    border-radius: 30px;
+  }
+
+.active h1 {
+    text-align: center;
+    font-size: 80px;
+}
+
+[data-content] {
+    display: none;
+}
+
+.active[data-content] {
+    display: block;
+}
+
+
+
+
+/******************************************/
+
+/*contenedor de las cartas */
+.card-container{
+    border: 5px solid blue;
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.container {
+    margin-top: 60px; /* Ajusta este valor según la altura del menú y el margen superior deseado */
+    padding: 0px; /* Agrega un relleno opcional para el contenido */
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    border: 1px solid black;
+}
+
+
+
+
+/****************************************************************/
+.article-card {
+    width: 550px;
+    height: 550px;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 300ms;
+    margin: 20px;
+}
+
+#indent-1{
+    width: 1050px;
+    height: 550px;
+}
+  
+.article-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.article-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.article-card .content {
+    box-sizing: border-box;
+    width: 100%;
+    position: absolute;
+    padding: 30px 20px 20px 20px;
+    height: auto;
+    bottom: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+}
+
+.article-card .date,
+.article-card .title {
+    margin: 0;
+}
+
+.article-card .date {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 4px;
+}
+
+.article-card .title {
+    font-size: 17px;
+    color: #fff;
+}
+  
+
+/*skills*/
+.skils-container{
+    border: 5px solid blue;
+    padding: 2%;
+
+}
+#ski1, 
+#ski2,
+#ski3{
+    width: 400px;
+    height: 550px;
+
+}
+#containerId{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+/*footer*/
+
+footer {
+    background-color: black;
+    border: 5px solid blue !important;
+}
